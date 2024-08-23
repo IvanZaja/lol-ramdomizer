@@ -1,16 +1,18 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList, ScrollView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import ChampionCard from './ChampionCard';
 import ItemsCard from './ItemsCard';
+import SpellsCard from './SpellsCard';
 
 export default function Main() {
     const insets = useSafeAreaInsets();
 
   return (
-      <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
+      <ScrollView style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
         <ChampionCard />
         <ItemsCard />
-      </View>
+        <SpellsCard />
+      </ScrollView>
   );
 }
 
