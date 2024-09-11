@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Image, Text, View } from "react-native"
 import Json from './items.json'
 
-export default function ItemsCard() {
+export default function ItemsCard({ reload }) {
     
     const [item, setItem] = useState(null)
     const [item2, setItem2] = useState(null)
@@ -57,7 +57,7 @@ export default function ItemsCard() {
             setItemId6(Item6?.image?.full?.slice(0, 4));
 
           console.log(Item2);
-      }, [])
+      }, [reload])
 
   return (
     <View className="bg-[#000f17]">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Image, Text, View } from 'react-native';
 
-function SpellsCard() {
+function SpellsCard({ reload }) {
 
   const [spell, setSpell] = useState('')
   const [spellName, setSpellName] = useState('')
@@ -27,7 +27,7 @@ function SpellsCard() {
             setSpellImg(spell?.image?.full?.slice(0, -4));
             console.log(spell.id)
           })
-      }, [])
+      }, [reload])
 
   return (
     <View>

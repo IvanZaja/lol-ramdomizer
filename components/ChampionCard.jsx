@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Image, Text, View } from "react-native"
 
-export default function ChampionCard() {
+export default function ChampionCard({ reload }) {
 
   const [champion, setChampion] = useState(null)
   const [championLane, setChampionLane] = useState('')
@@ -27,7 +27,7 @@ export default function ChampionCard() {
         setChampionTitle(champion?.title)
 
       })
-  }, [])
+  }, [reload])
 
   return (
     <View className="p-6 bg-[#00334D] flex flex-row gap-3">
