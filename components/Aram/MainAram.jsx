@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View, Image, FlatList, ScrollView, Button, Pressable } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import ChampionCard from './ChampionCard';
-import ItemsCard from './ItemsCard';
-import SpellsCard from './SpellsCard';
+import ChampionCard from '../ChampionCard';
+import ItemsCard from '../ItemsCard';
+import SpellsCard from '../SpellsCard';
 import { useState } from 'react';
-import ReloadIcon from './Icons/ReloadIcon';
+import ReloadIcon from '../Icons/ReloadIcon';
 
-export default function Main() {
+export default function MainAram() {
     const insets = useSafeAreaInsets();
 
     const [reload, setReload] = useState(false);
@@ -14,7 +14,6 @@ export default function Main() {
   return (
     <>
       <ScrollView className="relative" style={{ paddingBottom: insets.bottom }}>
-        <ChampionCard reload={reload} />
         <ItemsCard reload={reload} />
         <SpellsCard reload={reload} />
       </ScrollView>

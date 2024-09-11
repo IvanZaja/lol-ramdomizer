@@ -30,7 +30,7 @@ export default function ChampionCard({ reload }) {
   }, [reload])
 
   return (
-    <View className="p-6 bg-[#00334D] flex flex-row gap-3">
+    <View className="px-6 pt-12 pb-6 bg-[#00334D] flex flex-row gap-3">
         <Image source={{ uri: `https://ddragon.leagueoflegends.com/cdn/14.16.1/img/champion/${championName}.png` }} className="w-36 h-36 rounded-lg" />
         <View className="flex justify-between">
           <View>
