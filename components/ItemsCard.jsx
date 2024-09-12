@@ -56,7 +56,6 @@ export default function ItemsCard({ reload }) {
             setItemId5(Item5?.image?.full?.slice(0, 4));
             setItemId6(Item6?.image?.full?.slice(0, 4));
 
-          console.log(Item2);
       }, [reload])
 
   return (

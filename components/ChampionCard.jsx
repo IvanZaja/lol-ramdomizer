@@ -25,17 +25,16 @@ export default function ChampionCard({ reload }) {
         setChampionLane(lanes[randomIndex])
         setChampionName(champion?.name)
         setChampionTitle(champion?.title)
-
       })
   }, [reload])
 
   return (
     <View className="px-6 pt-12 pb-6 bg-[#00334D] flex flex-row gap-3">
-        <Image source={{ uri: `https://ddragon.leagueoflegends.com/cdn/14.16.1/img/champion/${championName}.png` }} className="w-36 h-36 rounded-lg" />
+        <Image source={{ uri: (championName ? `https://ddragon.leagueoflegends.com/cdn/14.16.1/img/champion/${championName}.png` : `https://ddragon.leagueoflegends.com/cdn/14.16.1/img/champion/Teemo.png`) }} className="w-36 h-36 rounded-lg" />
         <View className="flex justify-between">
           <View>
-            <Text className="text-white text-2xl font-semibold">{championName}</Text>
-            <Text className="text-white text-lg flex-wrap w-56">{championTitle}</Text>
+            <Text className="text-white text-2xl font-semibold">{(championName ? championName : 'Teemo')}</Text>
+            <Text className="text-white text-lg flex-wrap w-56">{(championTitle ? championTitle : '¡Capitán Teemo de servicio!')}</Text>
           </View>
           <View className="bg-[#8b5cf6] rounded-full w-[130px] h-[35px]">
             <Text className="text-white text-2xl font-semibold text-center">{championLane}</Text>

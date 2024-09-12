@@ -15,8 +15,9 @@ function SpellsCard({ reload }) {
             const spells = data?.data
             const spellsArray = Object.values(spells);
             const filteredSpells = spellsArray.filter(spell => 
-              spell.modes.includes("CLASSIC") && spell.modes.includes("ARAM")
-          );
+              spell.modes.includes("ARAM") && 
+              spell.name !== 'Destello'
+            );
             const randomSpell = Math.floor(Math.random() * filteredSpells.length);
     
             const selectedSpell = filteredSpells[randomSpell];
@@ -25,7 +26,6 @@ function SpellsCard({ reload }) {
             setSpellName(spell?.name)
 
             setSpellImg(spell?.image?.full?.slice(0, -4));
-            console.log(spell.id)
           })
       }, [reload])
 
@@ -38,8 +38,8 @@ function SpellsCard({ reload }) {
                 <Text className="text-white text-center mt-3 font-semibold text-wrap">Destello</Text>
               </View>
               <View className="mb-8 w-[107px]">
-                <Image source={{ uri: `https://ddragon.leagueoflegends.com/cdn/14.16.1/img/spell/${spellImg}.png` }} className="w-28 h-28 rounded-lg" />
-                <Text className="text-white text-center mt-3 font-semibold text-wrap">{spellName}</Text>
+                <Image source={{ uri: (spellImg ? `https://ddragon.leagueoflegends.com/cdn/14.16.1/img/spell/${spellImg}.png` : 'https://ddragon.leagueoflegends.com/cdn/14.18.1/img/spell/SummonerSnowball.png' ) }} className="w-28 h-28 rounded-lg" />
+                <Text className="text-white text-center mt-3 font-semibold text-wrap">{(spellName ? spellName : 'Marca' )}</Text>
               </View>
         </View>
     </View>

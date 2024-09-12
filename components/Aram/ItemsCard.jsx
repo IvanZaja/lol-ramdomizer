@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Image, Text, View } from "react-native"
-import Json from './items.json'
+import Json from '../items.json'
 
 export default function ItemsCard({ reload }) {
     
@@ -22,8 +22,8 @@ export default function ItemsCard({ reload }) {
             const items = Json?.data;
             const itemsArray = Object.values(items);
 
-            const bootsItems = itemsArray.filter(item => item.tags.includes("Boots"));
-            const nonBootsItems = itemsArray.filter(item => !item.tags.includes("Boots"));
+            const bootsItems = itemsArray.filter(item => item.tags.includes("Boots") && item.maps['12'] === true);
+            const nonBootsItems = itemsArray.filter(item => !item.tags.includes("Boots") && item.maps['12'] === true);
 
 
             const randomBootsItem = bootsItems[Math.floor(Math.random() * bootsItems.length)];
@@ -56,7 +56,6 @@ export default function ItemsCard({ reload }) {
             setItemId5(Item5?.image?.full?.slice(0, 4));
             setItemId6(Item6?.image?.full?.slice(0, 4));
 
-          console.log(Item2);
       }, [reload])
 
   return (
